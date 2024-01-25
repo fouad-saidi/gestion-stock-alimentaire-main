@@ -1,0 +1,63 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Swagger with Laravel",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/recipes-possible": {
+            "get": {
+                "summary": "Possible Recipes",
+                "description": "Possible Recipes.",
+                "operationId": "03f7e68dbe15be87f7577796f824ea51",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/api/valid-recipe": {
+            "post": {
+                "summary": "Confirm the stock for the recipe",
+                "description": "Confirm the stock for the recipe.",
+                "operationId": "60e564c114abf334de65f5efd0dd5b91",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "recipe_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Stock was successfully reduced after the recipe was validated"
+                    },
+                    "422": {
+                        "description": "Validation failures or insufficient stock"
+                    }
+                }
+            }
+        },
+        "/api/stock": {
+            "get": {
+                "summary": "Get Stock with products",
+                "description": "Get Stock with products.",
+                "operationId": "a95d8e15afcad95e6974565dfb0accd3",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        }
+    }
+}
